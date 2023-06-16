@@ -6,7 +6,7 @@ if [ -d "/usr/local/shnlp/.install4j" ]; then
     /usr/local/shnlp/shnlps_console
 else
     # New install
-    echo "First run detected, installing Skyhigh Cloud connector...
+    echo "First run detected, installing Skyhigh Cloud connector..."
     cd /
     set timeout 300
     chmod +r shnlp_unix64_6_3_2_2.sh
