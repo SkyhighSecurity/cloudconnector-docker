@@ -7,4 +7,4 @@ RUN unzip Skyhigh_Cloud_Connector_UNIX64_6_3_2_2.sh.zip
 COPY entrypoint.sh /
 COPY install.expect /
 RUN chmod +x /entrypoint.sh
-ENTRYPOINT [ "bash /entrypoint.sh" ]
+ENTRYPOINT [ "/usr/bin/bash", "/entrypoint.sh" ]
