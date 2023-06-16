@@ -1,0 +1,40 @@
+#!/usr/bin/expect
+set username [lindex $argv 0];
+set password [lindex $argv 1];
+set salt [lindex $argv 2]
+spawn ./shnlp_unix64_6_3_2_2.sh
+expect  {OK [o, Enter], Cancel [c]}
+send -- "\r"
+expect  {[/usr/local/shnlp]}
+send -- "\r"
+expect  {Yes [y, Enter], No [n]}
+send -- "\r"
+expect  {Yes [y, Enter], No [n]}
+send -- "\r"
+expect  {[/usr/local/bin]}
+send -- "\r"
+expect  {This machine can directly connect to the internet [1, Enter], This machine requires a proxy server to connect to the internet [2]}
+send -- "\r"
+expect  {[]}
+send -- "$username\r"
+expect  {Password:}
+send -- "$password\r"
+expect  {CAPROD [4]}
+send -- "\r"
+expect  {Salt}
+send -- "$salt\r"
+expect  {Yes [y], No [n, Enter]}
+send -- "\r"
+expect  {]}
+send -- "\r"
+expect  {[8443]}
+send -- "\r"
+expect  {Yes [y], No [n, Enter]}
+send -- "\r"
+expect  {Enter]}
+send -- "\r"
+set ret 1
+expect  {
+    "Finishing installation ..." { set ret 0; sleep 20; exp_continue}
+}
+exit $ret
