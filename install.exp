@@ -1,0 +1,84 @@
+#!/usr/bin/expect
+set timeout 180
+puts "DOCKER INSTALL: Beginning scripted installation..."
+spawn ./shnlp_unix64_6_3_2_2.sh
+while {1 == 1} {
+    expect  {
+        "This will install Skyhigh Cloud Connector on your computer" {
+            sleep 1
+            send -- "o\n"
+        }
+        "Where should Skyhigh Cloud Connector be installed" {
+            sleep 1
+            send -- "/usr/local/shnlp\n" 
+        }
+        "Create symlinks" {
+            sleep 1
+            send -- "y\n" 
+        }
+        "Select the folder where you would like Skyhigh Cloud Connector to create symlinks" {
+            sleep 1
+            send -- "/usr/local/bin\n"
+        }
+        "This machine can directly connect to the internet" {
+            sleep 1
+            send -- "1\n"
+        }        
+        "Username:" {
+            sleep 1
+            send -- "$::env(SKYHIGH_USERNAME)\n"
+        }
+        "Password:" {
+            sleep 1
+            send -- "$::env(SKYHIGH_PASSWORD)\n"
+        }
+        "EUPROD (Frankfurt)" {
+            sleep 1
+            send -- "1\n"
+        }
+        "The Salt is used as a customer-specific secret" {
+            sleep 1
+            send -- "$::env(SKYHIGH_SALT)\n"
+        }
+        "Custom Environment URL" {
+            sleep 1
+            send -- "y\n"
+            expect "https://www.myshn.net/shnapi/" {
+                sleep 1
+                send -- "$::env(SKYHIGH_ENV)\n"
+            }
+        }
+        "Local IP Address:" {
+            sleep 1
+            send -- "\n"
+            expect "Port:"
+                sleep 1
+                send -- "$::env(SKYHIGH_PORT)\n"
+        }
+        "Select No to keep the same DNS name" {
+            sleep 1
+            send -- "n\n"
+        }
+        "Choose the configuration to be used by the Skyhigh Cloud Connector installation" {
+            sleep 1
+            send -- "\n"
+        }
+        "Extracting files ..." {
+            expect {
+                eof {
+                    puts "DOCKER INSTALL: Installation successful!"
+                    exit 0
+                }
+            }
+        }
+
+        eof {
+            puts "DOCKER INSTALL: Installer quit unexpectedly.  Exiting code 3."
+            exit 3
+        }
+        timeout {
+            puts "DOCKER INSTALL: Unexpected timeout in input script.  Exiting code 1."
+            exit 1
+        }
+    }
+}
