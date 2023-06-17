@@ -1,4 +1,5 @@
 FROM ubuntu:22.04
+LABEL org.opencontainers.image.source="https://github.com/SkyhighSecurity/cloudconnector-docker"
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update -y && apt install -y wget unzip expect
 RUN mkdir /app

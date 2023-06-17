@@ -1,23 +1,24 @@
 # Introduction
 This project installs the Skyhigh Cloud Connector in a docker container (current version 6.3.2.2).  You must supply the installation parameters as environment variables:
 
-    SKYHIGH_USERNAME    The username of a Skyhigh dashboard user with the Cloud Connector User role. If your tenant is SAML federated, the user should be in the User Exclusions list and have a password set.
 
-	SKYHIGH_PASSWORD	The password for the Skyhigh dashboard user.
+**SKYHIGH_USERNAME** -- The username of a Skyhigh dashboard user with the Cloud Connector User role. If your tenant is SAML federated, the user should be in the User Exclusions list and have a password set.
 
-	SKYHIGH_SALT		A salt value to ensure privacy when tokenizing data (remember this value)
+**SKYHIGH_PASSWORD** -- The password for the Skyhigh dashboard user.
 
-	SKYHIGH_ENV			The base url you see when you login with /shnapi/ at the end.  For instance, if you see https://www.myshn.net then this value will be https://www.myshn.net/shnapi.
+**SKYHIGH_SALT** -- A salt value to ensure privacy when tokenizing data (remember this value)
 
-	SKYHIGH_PORT		The TCP port the WebUI will listen for connections on.  8443 is the recommended port.
+**SKYHIGH_ENV** -- The base url you see when you login with /shnapi/ at the end.  For instance, if you see *https://www.myshn.net* then this value will be *https://www.myshn.net/shnapi*.
 
-	ACCEPT_TERMS		Set this value to YES to indicate that you agree to our terms of service / use.
+**SKYHIGH_PORT** --	The TCP port the WebUI will listen for connections on.  *8443* is the recommended port.
+
+**ACCEPT_TERMS** -- Set this value to YES to indicate that you agree to our terms of service / use.
 
     
 
 # Installation
 
-## Notes
+## Considerations
 
 It is recommended that you provide persistent storage for your installation in order to facilitate backup and recovery of your log files and configuration.  Mount your storage to the container at /usr/local/shnlp.
 

@@ -26,7 +26,7 @@ if [ -z "${SKYHIGH_PORT}" ]; then
     exit 1
 fi
 
-if [ "$ACCEPT_TERMS" = "YES" ] || [ "$ACCEPT_TERMS" = "yes" ]
+if [ "$ACCEPT_TERMS" = "YES" ] || [ "$ACCEPT_TERMS" = "yes" ]; then
 
     if [ -d "/usr/local/shnlp/.install4j" ]; then
         # Log processor already installed, run it:
