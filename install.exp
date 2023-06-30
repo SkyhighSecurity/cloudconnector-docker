@@ -24,6 +24,10 @@ while {1 == 1} {
             sleep 1
             send -- "1\n"
         }        
+        "install to that directory anyway" {
+            sleep 1
+            send -- "y\n"
+        }        
         "Username:" {
             sleep 1
             send -- "$::env(SKYHIGH_USERNAME)\n"
