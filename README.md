@@ -36,7 +36,7 @@ docker run -t -e SKYHIGH_USERNAME='mrchow@trunk.com' -v /path/to/storage:/usr/lo
 version: '3'
 services:
   cloudconnector:
-    image: ghcr.io/skyhighlabs/cloudconnectordocker:latest
+    image: ghcr.io/skyhighsecurity/cloudconnector-docker:latest
     environment:
       - SKYHIGH_USERNAME='mrchow@trunk.com'
       - SKYHIGH_PASSWORD='bologna1'
