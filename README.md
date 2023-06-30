@@ -38,12 +38,12 @@ services:
   cloudconnector:
     image: ghcr.io/skyhighsecurity/cloudconnector-docker:latest
     environment:
-      - SKYHIGH_USERNAME='mrchow@trunk.com'
-      - SKYHIGH_PASSWORD='bologna1'
-      - SKYHIGH_SALT='salt123'
-      - SKYHIGH_ENV='https://www.myshn.net/shnapi/'
-      - SKYHIGH_PORT='8443'
-	  - ACCEPT_TERMS='YES'
+      - SKYHIGH_USERNAME=mrchow@trunk.com
+      - SKYHIGH_PASSWORD=bologna1
+      - SKYHIGH_SALT=salt123
+      - SKYHIGH_ENV=https://www.myshn.net/shnapi/
+      - SKYHIGH_PORT=8443
+      - ACCEPT_TERMS=YES
     volumes:
       - /path/to/storage:/usr/local/shnlp
     network_mode: host
