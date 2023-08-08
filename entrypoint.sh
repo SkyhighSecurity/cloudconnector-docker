@@ -40,7 +40,7 @@ if [ "$ACCEPT_TERMS" = "YES" ] || [ "$ACCEPT_TERMS" = "yes" ]; then
         if expect ./install.exp; then
             echo "Install complete, starting service..."
             /usr/local/shnlp/shnlps_console
-        else 
+        else
             echo "Installation failed.  See output above."
             exit 0
         fi
