@@ -61,6 +61,11 @@ while {1 == 1} {
         }
         "Select No to keep the same DNS name" {
             sleep 1
+            if {[info exists env(SKYHIGH_DNS_NAME)]} {
+                send -- "$::env(SKYHIGH_DNS_NAME)\n"
+            } else {
+                send -- "n\n"
+            }
             send -- "n\n"
         }
         "Choose the configuration to be used by the Skyhigh Cloud Connector installation" {
