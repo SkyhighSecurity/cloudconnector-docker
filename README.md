@@ -1,5 +1,5 @@
 # Introduction
-This project installs the Skyhigh Cloud Connector in a docker container (current version 6.3.2.2).  You must supply the installation parameters as environment variables:
+This project installs the Skyhigh Cloud Connector in a docker container.  You must supply the installation parameters as environment variables:
 
 
 **SKYHIGH_USERNAME** -- The username of a Skyhigh dashboard user with the Cloud Connector User role. If your tenant is SAML federated, the user should be in the User Exclusions list and have a password set.
