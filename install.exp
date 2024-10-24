@@ -1,7 +1,7 @@
 #!/usr/bin/expect
 set timeout 180
 puts "DOCKER INSTALL: Beginning scripted installation..."
-spawn ./shnlp_unix64_6_3_2_2.sh
+spawn ./shnlp_unix64_6_7_2_0.sh
 while {1 == 1} {
     expect  {
         "This will install Skyhigh Cloud Connector on your computer" {

@@ -34,7 +34,7 @@ if [ "$ACCEPT_TERMS" = "YES" ] || [ "$ACCEPT_TERMS" = "yes" ]; then
         /usr/local/shnlp/shnlps_console
     else
         # New install
-        chmod +x shnlp_unix64_6_3_2_2.sh
+        chmod +x shnlp_unix64_6_7_2_0.sh
         chmod +x install.exp
         echo "First run detected, installing Skyhigh Cloud connector..."
         if expect ./install.exp; then
