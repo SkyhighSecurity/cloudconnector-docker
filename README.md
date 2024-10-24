@@ -52,7 +52,7 @@ services:
 # FAQ
 
 ### Can I run this in production?
-For performance reasons we recommend a dedication virtual machine for production workloads. The container is intended as solution for lab and POC environments.
+For performance reasons we recommend a dedicated virtual machine for production workloads. The container is intended as solution for lab and POC environments.
 
 ### Is this supported?
 While cloud connector is fully supported, however this installation method is not officially supported by Skyhigh Security.
